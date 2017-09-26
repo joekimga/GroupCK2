@@ -42,8 +42,12 @@ TheMovieDB API: (https://www.themoviedb.org/documentation/api)
 
 IMDB API: (http://www.omdbapi.com/)
 
+Flickr API: (https://www.flickr.com/services/api/)
+
 Movie Theater Near Me API: (http://developer.tmsapi.com/docs/read/data_v1_1/movies/Movie_showtimes)
 
 Google Maps API: (https://developers.google.com/maps/)
 
 YouTube Movie API: (https://developers.google.com/youtube/v3/docs/search/list)
+
+eBay API: (https://go.developer.ebay.com/api-documentation)
