@@ -51,3 +51,5 @@ Google Maps API: (https://developers.google.com/maps/)
 YouTube Movie API: (https://developers.google.com/youtube/v3/docs/search/list)
 
 eBay API: (https://go.developer.ebay.com/api-documentation)
+
+Pinterest API: (https://developers.pinterest.com/docs/getting-started/introduction/?)
