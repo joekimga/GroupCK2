@@ -37,3 +37,11 @@ Most Hilarious
 Most Disruptive
 
 Most Socially Conscious
+
+IMDB API: (http://www.omdbapi.com/)
+
+Movie Theater Near Me API: (http://developer.tmsapi.com/docs/read/data_v1_1/movies/Movie_showtimes)
+
+Google Maps API: (https://developers.google.com/maps/)
+
+YouTube Movie API: (https://developers.google.com/youtube/v3/docs/search/list)
