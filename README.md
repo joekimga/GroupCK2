@@ -44,9 +44,7 @@ IMDB API: (http://www.omdbapi.com/)
 
 Flickr API: (https://www.flickr.com/services/api/)
 
-Movie Theater Near Me API: (http://developer.tmsapi.com/docs/read/data_v1_1/movies/Movie_showtimes)
-
-Google Maps API: (https://developers.google.com/maps/)
+Google Search API: (https://developers.google.com/custom-search/json-api/v1/overview)
 
 YouTube Movie API: (https://developers.google.com/youtube/v3/docs/search/list)
 
@@ -56,10 +54,6 @@ Pinterest API: (https://developers.pinterest.com/docs/getting-started/introducti
 
 Instagram API: (https://www.instagram.com/developer/)
 
-Yelp API: (https://www.yelp.com/developers/documentation/v2/overview)
-
-Uber API: (https://developer.uber.com/)
-
-Fandango API: (https://developer.fandango.com/)
-
 Etsy API: (https://www.etsy.com/developers/documentation/getting_started/api_basics)
+
+Face ++ API (https://market.mashape.com/faceplusplus/faceplusplus-face-detection)
