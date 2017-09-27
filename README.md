@@ -60,3 +60,4 @@ Yelp API: (https://www.yelp.com/developers/documentation/v2/overview)
 
 Uber API: (https://developer.uber.com/)
 
+Fandango API: (https://developer.fandango.com/)
