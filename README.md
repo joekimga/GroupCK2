@@ -55,3 +55,6 @@ eBay API: (https://go.developer.ebay.com/api-documentation)
 Pinterest API: (https://developers.pinterest.com/docs/getting-started/introduction/?)
 
 Instagram API: (https://www.instagram.com/developer/)
+
+Yelp API: (https://www.yelp.com/developers/documentation/v2/overview)
+
