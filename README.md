@@ -61,3 +61,5 @@ Yelp API: (https://www.yelp.com/developers/documentation/v2/overview)
 Uber API: (https://developer.uber.com/)
 
 Fandango API: (https://developer.fandango.com/)
+
+Etsy API: (https://www.etsy.com/developers/documentation/getting_started/api_basics)
