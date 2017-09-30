@@ -1,3 +1,4 @@
+$(document).ready(function(){
 
 // displayeBayInfo function re-renders the HTML to display the appropriate content
 function displayeBayInfo() {
@@ -12,4 +13,5 @@ function displayeBayInfo() {
 
 
 
-}
+  };
+};
