@@ -1,3 +1,5 @@
+
+
 var textVal = "dog";
 var textCos = "costume";
 var queryURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1741cd0b819eb951e3c55395923708fa&format=json&nojsoncallback=1&text="+textVal+ " " + textCos +"&extras=url_o";
@@ -20,6 +22,4 @@ $.ajax({
         newDiv.attr("src", imgLink);
         $("#flickr").append(newDiv);
     }
-    
-    
 });
