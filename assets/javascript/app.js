@@ -1,8 +1,8 @@
 
-// displayTwitterInfo function re-renders the HTML to display the appropriate content
-function displayTwitterInfo() {
+// displayeBayInfo function re-renders the HTML to display the appropriate content
+function displayeBayInfo() {
 
-  var twitter = $(this).attr("data-name");
+  var eBay = $(this).attr("data-name");
   var queryURL = ""
 
 
