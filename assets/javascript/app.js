@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // After the API loads, call a function to enable the search box.
 function handleAPILoaded() {
   $('#search-button').attr('disabled', false);
@@ -16,3 +17,22 @@ function search() {
     $('#search-container').html('<pre>' + str + '</pre>');
   });
 }
+=======
+$(document).ready(function(){
+
+// displayeBayInfo function re-renders the HTML to display the appropriate content
+function displayeBayInfo() {
+
+  var eBay = $(this).attr("data-name");
+  var queryURL = ""
+
+
+
+
+
+
+
+
+  };
+};
+>>>>>>> 79a9a672742b3bb3f010e9505253ec490d3aa9e6
