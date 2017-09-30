@@ -16,7 +16,8 @@
     <script type="text/javascript">
 
     $(document).ready(function(){
-        $('#api_form').bind('submit', function() {
+        $('button').on('click', function(event) {
+            event.preventDefault();
             api_key = "1zff6gxtmn59gbbrqetiouo0";
             terms = $('#searchTerms').val().trim();
             var addition = " costume"

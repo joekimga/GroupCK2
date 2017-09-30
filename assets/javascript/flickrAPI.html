@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Flickr</title>
+<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <form id="api_form">
+        <input id="searchTerms" size="32">
+        <button>Search!</button>
+    </form>
+    <div id="etsy_area"></div>
+    <div id="flickr_area"></div>
+<!--========================================================= -->   
+<script>
+$(document).ready(function(){
+    
+    $('button').on('click', function(event) {
+        event.preventDefault();
+        terms = $('#searchTerms').val().trim();
+        var addition = "_costume"
+        var flickrURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1741cd0b819eb951e3c55395923708fa&format=json&nojsoncallback=1&text=" + terms + addition +"&extras=url_o";
+            console.log(flickrURL);
+        $.ajax({
+            url: flickrURL
+        }).done(function(response){
+            console.log(response);
+            for (var i = 0 ; i < 4 ; i++){
+                var pps = response.photos.photo[i];
+                var myfarm = pps.farm;
+                var myserver = pps.server;
+                var myid = pps.id;
+                var mysecret = pps.secret;
+
+
+                var imgLink = "https://farm" + myfarm + ".staticflickr.com/" + myserver + "/" + myid +"_" + mysecret + ".jpg";
+
+                var newImg = $("<img>");
+                newImg.addClass("imgClass");
+                newImg.attr("src", imgLink);
+                newImg.appendTo("#flickr_area");
+                    }
+                });
+    });
+});
+</script>
+<!--=========================================================  -->  
+</body>
+</html>    
+
+    
