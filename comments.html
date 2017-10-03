@@ -5,8 +5,7 @@
 	<title>GroupProject</title>
 	<meta charset="utf-8">
 
-
-    
+ 
 	<!--bootstrap cdn-->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -15,44 +14,112 @@
 
 	<!--jquery cdn-->
 	<script src="httgs.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
 	<!--firebase-->
 	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
 
+    
 	<!--new moment.js-->
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
-        <!--CSS-->
-    <link src="assets/css/style.css" rel="stylesheet/css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
     
+    <!-- google font -->
+    <link href='https://fonts.googleapis.com/css?family=Montez' rel='stylesheet'>
+    
+    <!-- JavaScript -->
+    <script src="assets/javascript/daviidAPI.js"></script>
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<!--Comment out yellow background
+<body style="background-color: yellow;">
+-->
+<body>
+
+<div id="sub_body" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
 <div>
     <div id="message_area"></div>
     <hr>
 </div>   
-
+<h1 class="h1_class">TELL US WHAT YOU THINK</h1>
 <form action="/my-handling-form-page" method="post">
     <div>
         <label for="name">Name:</label><br>
-        <input type="text" id="name" name="user_name" class="col-sm-12 col-md-12 col-lg-12" style="color:black;">
-    </div>
+        <input type="text" id="name" name="user_name" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="color:black;">
+    </div><br>
     <div>
         <label for="Subject">Subject:</label><br>
-        <input type="text" id="Subject" name="Subject" class="col-sm-12 col-md-12 col-lg-12" style="color:black;">
-    </div>
+        <input type="text" id="Subject" name="Subject" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="color:black;">
+    </div><br>
     <div>
         <label for="msg">Comment:</label><br>
-        <textarea id="com" name="user_comment" class="col-sm-12 col-md-12 col-lg-12" style="color:black;"></textarea>
-    </div>
+        <textarea id="com" name="user_comment" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="color:black;"></textarea>
+    </div><br>
     <div class="button">
     <button type="submit" id="submit" style="color:black;">Submit</button>
-    </div>
+    </div><br>
 </form> 
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDVtLkMFEnRz-n-1adqa4UN34CoUy7oTYE",
+    authDomain: "gtcbc7and2.firebaseapp.com",
+    databaseURL: "https://gtcbc7and2.firebaseio.com",
+    projectId: "gtcbc7and2",
+    storageBucket: "gtcbc7and2.appspot.com",
+    messagingSenderId: "759565880970"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
     
+    var userName="";
+    var userSubject= "";
+    var userCom="";
+    var userNewCom="";
+
     
+$('#submit').on("click", function(event){
+    event.preventDefault();
+    userName = $("#name").val().trim();
+    userSubject = $("#Subject").val().trim();
+    userCom = $("#com").val().trim();
+
+database.ref().push({
+    topic: userSubject,
+    name: userName,
+    comment: userCom,
+    newComments: userNewCom
+    });
+    
+    $("#name").val('');
+    $("#Subject").val('');
+    $("#com").val('');
+   }); 
+    database.ref().on("child_added", function(snapshot){
+        var ss = snapshot.val();
+        var daTopic = ss.topic;
+        var daComment = ss.comment;
+        var daName = ss.name;
+
+        var mySpanO = $("<span><strong>User: </strong>"+daName+"</span><br>");
+        var mySpanT = $("<span><strong>Topic: </strong>"+daTopic+"</span><br>");
+        var mySpanF = $("<span><strong>Comment: </strong>"+daComment+"</span><br><br>");
+
+        $("#message_area").append(mySpanO);
+        $("#message_area").append(mySpanT);
+        $("#message_area").append(mySpanF);
+
+    });
+</script>
+</div>    
 <!--footer-->
 <!--  h3 text-muted text-muted-footer -->
 <footer class="footer">

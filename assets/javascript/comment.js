@@ -1,11 +1,11 @@
-  // Initialize Firebase
+$(document).ready(function(){
   var config = {
-    apiKey: "AIzaSyAocQPo9USuep7O-bUd9w_uXS02kfelQbk",
-    authDomain: "ga-buddiha-summer-camp.firebaseapp.com",
-    databaseURL: "https://ga-buddiha-summer-camp.firebaseio.com",
-    projectId: "ga-buddiha-summer-camp",
-    storageBucket: "ga-buddiha-summer-camp.appspot.com",
-    messagingSenderId: "1051790621452"
+    apiKey: "AIzaSyDVtLkMFEnRz-n-1adqa4UN34CoUy7oTYE",
+    authDomain: "gtcbc7and2.firebaseapp.com",
+    databaseURL: "https://gtcbc7and2.firebaseio.com",
+    projectId: "gtcbc7and2",
+    storageBucket: "gtcbc7and2.appspot.com",
+    messagingSenderId: "759565880970"
   };
   firebase.initializeApp(config);
   var database = firebase.database();
@@ -28,6 +28,7 @@ database.ref().push({
     comment: userCom,
     newComments: userNewCom
     });
+    
     $("#name").val('');
     $("#Subject").val('');
     $("#com").val('');
@@ -48,3 +49,6 @@ database.ref().push({
         $("#message_area").append(mySpanF);
 
     });
+    
+    });  
+
