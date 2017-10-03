@@ -1,4 +1,5 @@
-body {background-color: yellow;font-family: 'Montez';font-size: 22px; color:white; background-image: url(https://i.pinimg.com/originals/e8/a9/9f/e8a99fe2d11eccb439be84db48c1fc07.jpg);background-position: center; background-size:cover; background-repeat: no-repeat;}
+.jumbotron {background-image: url(https://images.megapixl.com/5015/50157085.jpg); background-repeat: no-repeat; background-size: cover; color: white;}
+body {background-color: yellow;font-family: 'Montez';font-size: 22px; background-image: url(https://i.pinimg.com/originals/e8/a9/9f/e8a99fe2d11eccb439be84db48c1fc07.jpg);background-position: center; background-size:cover; background-repeat: no-repeat;}
 panel-heading {background-color: #BF0404;}
 h1_class {color: white;font-weight:700;}
 imgDiv {width:250px; height:300px; background-color:#BF0404;}
@@ -14,4 +15,6 @@ button {width: 100%;height: 100%;}
 .btn_img_div {margin:5px 0;}
 .btn_img_class:hover {opacity: .8; }
 .top-buffer {margin-top:20px;}
-
+.panel_panel-primary {background-color: #BF0404;}
+.panel-title {color: white;}
+.footer {color: white;}
