@@ -5,8 +5,7 @@
 	<title>GroupProject</title>
 	<meta charset="utf-8">
 
-
-    
+ 
 	<!--bootstrap cdn-->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -15,31 +14,51 @@
 
 	<!--jquery cdn-->
 	<script src="httgs.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
 	<!--firebase-->
 	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
 
 	<!--new moment.js-->
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+    
+    <!-- google font -->
+    <link href='https://fonts.googleapis.com/css?family=Montez' rel='stylesheet'>
+    
     <!-- JavaScript -->
     <script src="assets/javascript/daviidAPI.js"></script>
     
     <!--CSS-->
     <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
-
+<!--Comment out yellow background
+<body style="background-color: yellow;">
+-->
 <body>
-    <a href="comments.html"><img class="comment_img" src="assets/Images/commentsIcon.ico"></a>
-<section id="top" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 top-section">
+
+<a href="comments.html"><img class="comment_img" src="assets/Images/commentsIcon.ico"></a>
+
 <div class="container">
 	
 	<!--jumbotron-->
-	<div class="jumbotron">
+	<!--commetn out RED BANNER
+	<div class="jumbotron" style="background-color: #BF0404; color: black;">
 		<h1 class="text-center"><strong>C(K<sup>2</sup>)</strong></h1>
 		<h2 class="text-center"><strong>COSTUME FINDER</strong></h2>
 	</div>
+	-->
+
+	<div class="jumbotron" style="background-image: url(https://images.megapixl.com/5015/50157085.jpg); background-repeat: no-repeat; background-size: cover; color: #BF0404;">
+		<h1 class="text-center"><strong>C(K<sup>2</sup>)</strong></h1>
+		<h1 class="text-center"><strong>Costume Finder</strong></h1>
+	</div>	
+
+
+
 </div>
 
 <!-- search bar container-->
@@ -50,11 +69,11 @@
 	<div class="content-wrapper">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			    <form class='navbar-form'>
-			      <div class='input-group'>
-			        <input class='form-control' type='text' name='search' placeholder='Type Here' id="searchbar" />
+			    <form class='form-horizontal'>
+			      <div class='input-group' id="flickr_area etsy_area">
+			        <input class='form-control' type='text' name='search' placeholder='Search Hither' id="searchbar" />
 			        <span class="input-group-btn">
-			          <button type='submit' class='btn btn-default searchbarbtn' id="searchbarbtn">
+			          <button type='submit' class='btn btn-default' id="searchbarbtn">
 			            <span class='glyphicon glyphicon-search'></span>
 			          </button>
 			        </span>
@@ -65,17 +84,36 @@
 		</div>
 	</div>
 
-</div>
-</section>
 
+	<!--search bar COMMENT OUT
+	<div class="row">
+		<div class="col-lg-8">
+			<form>
+				<div class="form-group">
+					
+					<input type="text" id="search" class="form-control">
+				</div>
+			</form>
+		</div>	
+	-->
+
+
+		<!--submit button-->
+		<!-- submit button COMMENT OUT
+		<div class="col-lg-4">
+			<button class="btn btn-primary" id="search-bar-btn" type="submit">Submit</button>
+		</div>
+	</div>	
+	-->
+
+
+
+</div>
 
 <!--master container for both rows-->
 <div class="master container">
 	<!-- row 1 container-->
-	<div class="container">
-		<div class="panel-body">
-			<!--background image 1-->
-			<div class="row">
+				<div class="row">
 				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 btn_img_div">
 					<img class="img-responsive center-block img-rounded btn_img_class" src="assets/images/thisYear.jpg" alt="pikachu_gif" id="popThisYear" value="most_popular_this_year"  >
 				</div>
@@ -114,14 +152,11 @@
 					<img class="img-responsive center-block img-rounded btn_img_class imgBtn" src="assets/images/Male.jpg" alt="men" id="men" value="men"  >
 				</div>
 		</div>
-	</div>
 </div>
 
-<!-----------------------------------Testing-------------------------------------->
-<div id="flickr_area"></div>
-<div id="etsy_area"></div>
-<script src="assets/javascript/daviidAPI.js"></script>
-<!-----------------------------------Testing end---------------------------------->
+
+
+
 	<!--background image 9-->
 	<!-- comment out pic temp
 	<div class="row">
@@ -145,12 +180,14 @@
 
 
 <!--twitter api-->
+<!--comment out twitter api
 <div class="container">
 	<form id="twitter-form">
     	<label for="twitter-input">Twitter Search</label>
       	<input type="text" id="twitter-input"><br>
 		<input id="add-twitter-search" type="submit" value="Twitter Search">
     </form>
+-->     
 	
 
 
@@ -172,8 +209,8 @@
 
 	<!--another section-->
 	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h1 class="panel-title text-center h1_class"><strong>Whatever We Want it to Be</strong></h1>
+		<div class="panel-heading" style="background-color: #BF0404;">
+			<h1 class="panel-title text-center"  style="color: black;"><strong>Whatever We Want it to Be</strong></h1>
 		</div>
 		
 	</div>
@@ -181,7 +218,7 @@
 
 	<!--More stuff we can add-->
 	<div class="panel panel-primary">
-		<div class="panel-heading">
+		<div class="panel-heading" style="background-color: #BF0404;">
 			<h1 class="panel-title text-center" ><strong>Whatever We Want it to Be Again</strong></h1>
 		</div>
 		
@@ -196,7 +233,7 @@
 <!--  h3 text-muted text-muted-footer -->
 <footer class="footer">
   <div class="two-toned-footer-color"></div>
-  <h3 class="text-center">
+  <h3 class="text-center" style="color: white;">
     &copy; Copyright 2017 C(K<sup>2</sup>)
   </h3>
 </footer>
