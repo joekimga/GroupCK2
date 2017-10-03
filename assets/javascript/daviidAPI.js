@@ -9,16 +9,17 @@
 /*==============================FlickrAPI Begin==================================*/
 $(document).ready(function(){
     
-    $('#searchbarbtn').on('click', function(event) {
+    $(this).on('click', function(event) {
         event.preventDefault();
+        $("#flickr_area").empty();
         terms = $('#searchbar').val().trim();
+        var btnWord = $('.btn_img_div').attr('value');
         var addition = "_costume"
-        var flickrURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1741cd0b819eb951e3c55395923708fa&format=json&nojsoncallback=1&text=" + terms + addition +"&extras=url_o";
-            console.log(flickrURL);
+        var flickrURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1741cd0b819eb951e3c55395923708fa&format=json&nojsoncallback=1&text=" + terms + btnWord + addition +"&extras=url_o";
+            
         $.ajax({
             url: flickrURL
         }).done(function(response){
-            console.log(response);
             for (var i = 0 ; i < 4 ; i++){
                 var pps = response.photos.photo[i];
                 var myfarm = pps.farm;
@@ -41,14 +42,16 @@ $(document).ready(function(){
     
 /*==============================ETSYAPI Begin====================================*/
  $(document).ready(function(){
-        $('#searchbarbtn').on('click', function(event) {
+        $(this).on('click', function(event) {
             event.preventDefault();
+            $("etsy_area").empty();
             api_key = "1zff6gxtmn59gbbrqetiouo0";
             terms = $('#searchbar').val().trim();
-            var addition = " costume"
+            var btnWord = $('btn_img_div').attr('value');
+            var addition = "_costume"
             var etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords="+
-                terms+ addition + "&limit=4&includes=Images:1&api_key="+api_key;
-
+                terms+ btnWord + addition + "&limit=4&includes=Images:1&api_key="+api_key;
+/*API HARD CODE TEST:   https://openapi.etsy.com/v2/listings/active.js?keywords=dog&limit=4&includes=Images:1&api_key=1zff6gxtmn59gbbrqetiouo0*/
             $('#etsy_area').empty();
             $('<p></p>').text('Searching for '+terms).appendTo('#etsy_area');
 
@@ -61,11 +64,9 @@ $(document).ready(function(){
                         $('#etsy_area').empty();
                         if (data.count > 0) {
                             $.each(data.results, function(i,item) {
-                                /*<a href="item.url"><img src="item.Images[i]" class="ImgClass"></a>*/
                                 var newImg = $("<img>");
                                 newImg.addClass("imgClass");
                                 newImg.attr("src", item.Images[0].url_570xN);
-                                /*newImg.wrap("<a href='" + item.url + "'></a>");*/
                                 newImg.appendTo("#etsy_area").wrap("<a href='" + item.url + "'></a>");
                                 });
                         } else {
