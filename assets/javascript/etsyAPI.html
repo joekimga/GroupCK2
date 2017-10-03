@@ -7,7 +7,7 @@
 <body>
     <form id="api_form">
         <input id="searchTerms" size="32">
-        <button>Search!</button>
+        <button id="buttonflickr">Search!</button>
     </form>
     <div id="etsy_area"></div>
     <div id="flicker_area"></div>
@@ -16,7 +16,7 @@
     <script type="text/javascript">
 
     $(document).ready(function(){
-        $('button').on('click', function(event) {
+        $("button").on('click', function(event) {
             event.preventDefault();
             api_key = "1zff6gxtmn59gbbrqetiouo0";
             terms = $('#searchTerms').val().trim();

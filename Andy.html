@@ -1,17 +1,106 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Search</title>
-  </head>
-  <body>
-    <div id="buttons">
-      <label> <input id="query" value='cats' type="text"/><button id="search-button" onclick="search()">Search</button></label>
-    </div>
-    <div id="search-container">
-    </div>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="auth.js"></script>
-    <script src="search.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>    
+        <title>Your awesome Youtube search engine</title>
+        <meta charset="UTF-8" />          
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- scripts -->
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
+        <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="w100 text-center animated infinite pulse"><a href="index.html">YouTube Viral Search</a></h1>
+        </header>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form action="#">
+                    <p><input type="text" id="search" placeholder="Type something here..." autocomplete="on" class="form-control" /></p>
+                    <p><input type="submit" value="Search" class="form-control btn btn-primary w100"></p>
+                </form>
+                <div id="results"></div>
+            </div>
+        </div>
+
+
+<!-- Written by Amit Agarwal -->
+<input id="search">
+<div id="results"></div>
+
+<!-- Include the latest jQuery library -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function ($) {
+
+  $('#search').keyup(function () {
+
+    // the search term
+    var q = $('#search').val().trim();
+
+    // container to display search results
+    var $results = $('#results');
+
+    // YouTube Data API base URL (JSON response)
+    var url = "http://gdata.youtube.com/feeds/api/videos/?v=2&alt=jsonc&callback=?"
+
+    // set paid-content as false to hide movie rentals
+    url = url + '&paid-content=false';
+
+    // set duration as long to filter partial uploads
+    url = url + '&duration=long';
+
+    // order search results by view count
+    url = url + '&orderby=viewCount';
+
+    // we can request a maximum of 50 search results in a batch
+    url = url + '&max-results=50';
+
+    $.getJSON(url + "&q=" + q, function (json) {
+
+      var count = 0;
+
+      if (json.data.items) {
+
+        var items = json.data.items;
+        var html = "";
+
+        items.forEach(function (item) {
+
+          // Check the duration of the video, 
+          // full-length movies are generally longer than 1 hour
+          var duration = Math.round((item.duration) / (60 * 60));
+
+          // Filter out videos that aren't in the Film or Movies category
+          if ((duration > 1) && (item.category == "Movies" || item.category == "Film")) {
+
+            // Include the YouTube Watch URL youtu.be 
+            html += '<p><a href="http://youtu.be/' + item.id + '">';
+
+            // Add the default video thumbnail (default quality)
+            html += '<img src="http://i.ytimg.com/vi/' + item.id + '/default.jpg">';
+
+            // Add the video title and the duration
+            html += '<h2>' + item.title + ' ' + item.duration + '</h2></a></p>';
+            count++;
+          }
+        });
+      }
+
+      // Did YouTube return any search results?
+      if (count === 0) {
+        $results.html("No videos found");
+      } else {
+        // Display the YouTube search results
+        $results.html(html);
+      }
+    });
+  });
+});
+</script>
+        
+    </body>
 </html>
