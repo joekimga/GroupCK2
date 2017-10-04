@@ -1,4 +1,13 @@
-$(document).ready(function(){
+$(document).ready(function() {
+
+
+/* audio 
+    load: function(){
+      $("#introSong").trigger("play");
+
+    };
+  });
+*/
 
 // displayeBayInfo function re-renders the HTML to display the appropriate content
 
@@ -40,6 +49,3 @@ function displayeBayInfo() {
 };
 
 
-load: function(){
-  $("#introSong").trigger("play");
-},
