@@ -48,18 +48,19 @@
     <div id="message_area"></div>
     <hr>
 </div>   
+<a href="index.html"><button>HOME PAGE</button></a>
 <h1 class="h1_class">TELL US WHAT YOU THINK</h1>
 <form action="/my-handling-form-page" method="post">
     <div>
-        <label for="name">Name:</label><br>
+        <label for="name"><strong>Name:</strong></label><br>
         <input type="text" id="name" name="user_name" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="color:black;">
     </div><br>
     <div>
-        <label for="Subject">Subject:</label><br>
+        <label for="Subject"><strong>Subject:</strong></label><br>
         <input type="text" id="Subject" name="Subject" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="color:black;">
     </div><br>
     <div>
-        <label for="msg">Comment:</label><br>
+        <label for="msg"><strong>Comment:</strong></label><br>
         <textarea id="com" name="user_comment" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="color:black;"></textarea>
     </div><br>
     <div class="button">
@@ -109,14 +110,9 @@ database.ref().push({
         var daComment = ss.comment;
         var daName = ss.name;
 
-        var mySpanO = $("<span><strong>User: </strong>"+daName+"</span><br>");
-        var mySpanT = $("<span><strong>Topic: </strong>"+daTopic+"</span><br>");
-        var mySpanF = $("<span><strong>Comment: </strong>"+daComment+"</span><br><br>");
+        var allSpan = $("<div class='comBox'><span><strong>Name: </strong><p>"+daName+"</p></span>" + "<span><strong>Topic: </strong><p>"+daTopic+"</p></span>" + "<span><strong>Comment: </strong><p>"+daComment+"</p></span></div>");
 
-        $("#message_area").append(mySpanO);
-        $("#message_area").append(mySpanT);
-        $("#message_area").append(mySpanF);
-
+        $("#message_area").append(allSpan);
     });
 </script>
 

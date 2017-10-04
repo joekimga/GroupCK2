@@ -5,6 +5,7 @@ h1_class {color: white;font-weight:700;}
 imgDiv {width:250px; height:300px; background-color:#BF0404;}
 imgDiv:hover {opacity:.7;}
 button {width: 100%;height: 100%;}
+h2 {color:white; font-size:1.3em;}
 
 /*#top {background-image: url(../Images/costume_bg.jpg); background-position: center; background-size:cover; background-repeat: no-repeat;margin-bottom:30px;}*/
 #submit {width:150px;margin-top:10px;}
@@ -15,11 +16,21 @@ button {width: 100%;height: 100%;}
 .btn_img_div {margin:5px 0;}
 .btn_img_class:hover {opacity: .8; }
 .top-buffer {margin-top:20px;}
+.imgClass {width:25%;padding:5px;}
 .panel_panel-primary {background-color: #BF0404;}
 .panel-title {color: white;}
 .footer {color: white;}
+<<<<<<< HEAD
+/*.sub_section {border:1px dotted white; background-color:rgba(255, 255, 255, 0.5); ;display:inline-block;margin:10px 0;}*/
+.comBox {min-width:250px; width:30%; float:left; background: rgba(255, 255, 255, 0.9);margin:5px;}
+=======
+
+.sub_section {border:1px dotted white; background-color:rgba(255, 255, 255, 0.5); ;display:inline-block;margin:10px 0;}
+
 .h1_class {columns: white;}
 
 audio {display: none;}
 
 .img-responsive {cursor: pointer;}
+
+>>>>>>> 24d03f1924523db9d2ded655c59de5e8b2cda8cc
