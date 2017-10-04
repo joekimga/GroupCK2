@@ -1,4 +1,4 @@
-$(document).ready(function(){
+      // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDVtLkMFEnRz-n-1adqa4UN34CoUy7oTYE",
     authDomain: "gtcbc7and2.firebaseapp.com",
@@ -37,18 +37,10 @@ database.ref().push({
         var ss = snapshot.val();
         var daTopic = ss.topic;
         var daComment = ss.comment;
-        var daNewComment = ss.newComments;
+        var daName = ss.name;
 
-        var mySpanO = $("<span>Topic: <p>"+daTopic+"</p></span>");
-        var mySpanT = $("<span>Comment: <p>"+daComment+"</p></span>");
-        var mySpanF = $("<span><p>"+daNewComment+"</p></span><br><hr>");
-        
+        var allSpan = $("<div class='comBox'><span><strong>Name: </strong><p>"+daName+"</p></span>" + "<span><strong>Topic: </strong><p>"+daTopic+"</p></span>" + "<span><strong>Comment: </strong><p>"+daComment+"</p></span></div>");
 
-        $("#message_area").append(mySpanO);
-        $("#message_area").append(mySpanT);
-        $("#message_area").append(mySpanF);
-
+        $("#message_area").append(allSpan);
     });
-    
-    });  
 

@@ -110,14 +110,9 @@ database.ref().push({
         var daComment = ss.comment;
         var daName = ss.name;
 
-        var mySpanO = $("<span><strong>User: </strong>"+daName+"</span><br>");
-        var mySpanT = $("<span><strong>Topic: </strong>"+daTopic+"</span><br>");
-        var mySpanF = $("<span><strong>Comment: </strong>"+daComment+"</span><br><br>");
+        var allSpan = $("<div class='comBox'><span><strong>Name: </strong><p>"+daName+"</p></span>" + "<span><strong>Topic: </strong><p>"+daTopic+"</p></span>" + "<span><strong>Comment: </strong><p>"+daComment+"</p></span></div>");
 
-        $("#message_area").append(mySpanO);
-        $("#message_area").append(mySpanT);
-        $("#message_area").append(mySpanF);
-
+        $("#message_area").append(allSpan);
     });
 </script>
 </div>    
