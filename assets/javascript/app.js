@@ -40,3 +40,6 @@ function displayeBayInfo() {
 };
 
 
+load: function(){
+  $("#introSong").trigger("play");
+},
