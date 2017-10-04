@@ -1,26 +1,19 @@
-================================HTML USE====================================
-    /*<form id="api_form">
-        <input id="searchTerms" size="32">
-        <button>Search!</button>
-    </form>
-    <div id="etsy_area"></div>
-    <div id="flickr_area"></div>
-*/
 /*==============================FlickrAPI Begin==================================*/
 $(document).ready(function(
     ){
     
     $('button').on('click', function(event) {
         event.preventDefault();
-        terms = $('#searchTerms').val().trim();
+        terms = $('#searchbar').val().trim();
+        var imgBtnWord = $(".imgBtn").attr("value");
         var addition = "_costume"
-        var flickrURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1741cd0b819eb951e3c55395923708fa&format=json&nojsoncallback=1&text=" + terms + addition +"&extras=url_o";
+        var flickrURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1741cd0b819eb951e3c55395923708fa&format=json&nojsoncallback=1&text=" + terms + imgBtnWord + addition +"&extras=url_o";
             console.log(flickrURL);
         $.ajax({
             url: flickrURL
         }).done(function(response){
             console.log(response);
-            for (var i = 0 ; i < 4 ; i++){
+            for (var i = 0 ; i < 8 ; i++){
                 var pps = response.photos.photo[i];
                 var myfarm = pps.farm;
                 var myserver = pps.server;
@@ -46,10 +39,11 @@ $(document).ready(function(
         $('button').on('click', function(event) {
             event.preventDefault();
             api_key = "1zff6gxtmn59gbbrqetiouo0";
-            terms = $('#searchTerms').val().trim();
+            terms = $('#searchbar').val().trim();
+            var imgBtnWord = $(".imgBtn").attr("value");
             var addition = " costume"
             var etsyURL = "https://openapi.etsy.com/v2/listings/active.js?keywords="+
-                terms+ addition + "&limit=4&includes=Images:1&api_key="+api_key;
+                terms + imgBtnWord + addition + "&limit=8&includes=Images:1&api_key="+api_key;
 
             $('#etsy_area').empty();
             $('<p></p>').text('Searching for '+terms).appendTo('#etsy_area');
