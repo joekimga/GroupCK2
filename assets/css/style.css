@@ -20,5 +20,17 @@ h2 {color:white; font-size:1.3em;}
 .panel_panel-primary {background-color: #BF0404;}
 .panel-title {color: white;}
 .footer {color: white;}
+<<<<<<< HEAD
 /*.sub_section {border:1px dotted white; background-color:rgba(255, 255, 255, 0.5); ;display:inline-block;margin:10px 0;}*/
 .comBox {min-width:250px; width:30%; float:left; background: rgba(255, 255, 255, 0.9);margin:5px;}
+=======
+
+.sub_section {border:1px dotted white; background-color:rgba(255, 255, 255, 0.5); ;display:inline-block;margin:10px 0;}
+
+.h1_class {columns: white;}
+
+audio {display: none;}
+
+.img-responsive {cursor: pointer;}
+
+>>>>>>> 24d03f1924523db9d2ded655c59de5e8b2cda8cc
