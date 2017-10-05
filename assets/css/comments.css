@@ -25,7 +25,7 @@ audio {display: none;}
 .h1_class {color: white;}
 label {color: #BF0404;}
 
-.homepageTab {text-align: center;}
+.homepageTab {text-align: center; color: yellow; font-size: 40px; display: block;}
 
 
 /*moved data up above
