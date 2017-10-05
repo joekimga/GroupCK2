@@ -20,12 +20,10 @@ h2 {color:white; font-size:1.3em;}
 .panel_panel-primary {background-color: #BF0404;}
 .panel-title {color: white;}
 .footer {color: white;}
-<<<<<<< HEAD
-/*.sub_section {border:1px dotted white; background-color:rgba(255, 255, 255, 0.5); ;display:inline-block;margin:10px 0;}*/
 .comBox {min-width:250px; width:30%; float:left; background: rgba(255, 255, 255, 0.9);margin:5px;}
-=======
 
-.sub_section {border:1px dotted white; background-color:rgba(255, 255, 255, 0.5); ;display:inline-block;margin:10px 0;}
+
+.sub_section {border:1px dotted white; background-color:rgba(255, 255, 255, 0.5); display:inline-block;margin:10px 0;}
 
 .h1_class {columns: white;}
 
@@ -35,4 +33,7 @@ audio {display: none;}
 .sub_section {text-align: center;}
 
 
->>>>>>> 24d03f1924523db9d2ded655c59de5e8b2cda8cc
+.divImgDivClass {max-height: 350px; width:auto; height:auto;margin:5px 0;background-color:rgba(255,255,255,.8);}
+.imgDivClass {background-color: rgba(255,255,255,.7);height:350px;border: 1px solid;}
+img.imgClass {max-width: 300px;width:auto;height:300px;display: block;margin: 0 auto;margin-top: 5px;margin-bottom: 5px;box-shadow: 0px 0px 10px 2px #b1b1b1;}
+/*.modal-backdrop.fade.in {visibility: hidden;}*/

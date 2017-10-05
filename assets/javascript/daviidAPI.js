@@ -1,4 +1,4 @@
-
+  
 /*==============================FlickrAPI Begin==================================*/
 $(document).ready(function(){
     
@@ -12,7 +12,6 @@ $(document).ready(function(){
         $.ajax({
             url: flickrURL
         }).done(function(response){
-            console.log(response);
             for (var i = 0 ; i < 8 ; i++){
                 var pps = response.photos.photo[i];
                 var myfarm = pps.farm;
@@ -24,11 +23,11 @@ $(document).ready(function(){
                 var imgLink = "https://farm" + myfarm + ".staticflickr.com/" + myserver + "/" + myid +"_" + mysecret + ".jpg";
 
                 var newImg = $("<img>");
-                newImg.addClass("imgClass");
+                newImg.addClass("imgClass imgStyle");
                 newImg.attr("src", imgLink);
-                newImg.appendTo("#flickr_area");
-                    }
-                }); 
+                newImg.appendTo("#flickr_area").wrap("<div class='divImgDivClass col-xs-6 col-sm-6 col-md-3 col-lg-3'><div class='imgDivClass col-xs-12 col-sm-12 col-md-12 col-lg-12'></div></div>");
+            }
+        }); 
     });
 });
 
@@ -51,7 +50,6 @@ $(document).ready(function(){
                 url: etsyURL,
                 dataType: 'jsonp',
                 success: function(data) {
-                    console.log(data);
                     if (data.ok) {
                         $('#etsy_area').empty();
                         if (data.count > 0) {
@@ -61,7 +59,7 @@ $(document).ready(function(){
                                 newImg.addClass("imgClass");
                                 newImg.attr("src", item.Images[0].url_570xN);
                                 /*newImg.wrap("<a href='" + item.url + "'></a>");*/
-                                newImg.appendTo("#etsy_area").wrap("<a href='" + item.url + "'></a>");
+                                newImg.appendTo("#etsy_area").wrap("<div class='divImgDivClass col-xs-6 col-sm-6 col-md-3 col-lg-3'><div class='imgDivClass col-xs-12 col-sm-12 col-md-12 col-lg-12'><a href='" + item.url + "'></a></div></div>");
                                 });
                         } else {
                             $('<p>No results.</p>').appendTo('#etsy_area');
@@ -84,9 +82,8 @@ $(".imgBtn").on('click',function(){
         $('#flickr_area').empty();
         imgBtnWord = $(this).attr("value");
         var addition = "%20costume%20in%20USA"
-            console.log(imgBtnWord);
+ 
         var flickrURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1741cd0b819eb951e3c55395923708fa&format=json&nojsoncallback=1&text=" + imgBtnWord +  addition +"&extras=url_o";
-            console.log(flickrURL);
         $.ajax({
             url: flickrURL
         }).done(function(response){
@@ -102,11 +99,11 @@ $(".imgBtn").on('click',function(){
                 var imgLink = "https://farm" + myfarm + ".staticflickr.com/" + myserver + "/" + myid +"_" + mysecret + ".jpg";
 
                 var newImg = $("<img>");
-                newImg.addClass("imgClass");
+                newImg.addClass("imgClass imgStyle");
                 newImg.attr("src", imgLink);
-                newImg.appendTo("#flickr_area");
-                    }
-                }); 
+                newImg.appendTo("#flickr_area").wrap("<div class='divImgDivClass col-xs-6 col-sm-6 col-md-3 col-lg-3'><div class='imgDivClass col-xs-12 col-sm-12 col-md-12 col-lg-12'></div></div>");
+            }
+        }); 
     });
 });
 
@@ -137,7 +134,7 @@ $(".imgBtn").on('click',function(){
                                 newImg.addClass("imgClass");
                                 newImg.attr("src", item.Images[0].url_570xN);
                                 /*newImg.wrap("<a href='" + item.url + "'></a>");*/
-                                newImg.appendTo("#etsy_area").wrap("<a href='" + item.url + "'></a>");
+                                newImg.appendTo("#etsy_area").wrap("<div class='divImgDivClass col-xs-6 col-sm-6 col-md-3 col-lg-3'><div class='imgDivClass col-xs-12 col-sm-12 col-md-12 col-lg-12'><a href='" + item.url + "'></a></div></div>");
                                 });
                         } else {
                             $('<p>No results.</p>').appendTo('#etsy_area');

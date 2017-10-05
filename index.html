@@ -8,14 +8,24 @@
  
 	<!--bootstrap cdn-->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- google font -->
+    <link href='https://fonts.googleapis.com/css?family=Montez' rel='stylesheet'>
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/comments.css">
 
-	<!--javascript cdn-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	<!--jquery cdn-->
+    <!--jquery cdn-->
 	<script src="httgs.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        
+    <!-- JavaScript -->
+    <script src="assets/javascript/daviidAPI.js"></script>
+    
+	<!--javascript cdn-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<!--firebase-->
 	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
@@ -23,16 +33,6 @@
     
 	<!--new moment.js-->
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
-    
-    <!-- google font -->
-    <link href='https://fonts.googleapis.com/css?family=Montez' rel='stylesheet'>
-    
-    <!-- JavaScript -->
-    <script src="assets/javascript/daviidAPI.js"></script>
-    
-    <!--CSS-->
-    <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
@@ -146,7 +146,36 @@
 <h2 >FOR SALE~~</h2>    
 <div id="etsy_area"></div>    
 </div>    
+    <!--=============================Hidden modal begin========================================-->
+<div id="imagemodal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      <div class="modal-content">
+    <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+    </div>
+          
+    <div class="modal-body">
+        <img src="" class="imagepreview"  >
+    </div>
+          
+
+        <a href="#" class="close" data-dismiss="modal" aria-label="close">&times;</a>
+</div>
+</div>` 
+    </div>
     
+<!--==============================FlickrAPI modal==================================-->
+<script>
+$(document).ready(function(){
+        $(document).on('click', '.imgStyle', function(event) {
+            event.preventDefault();
+           $('.imagepreview').attr('src', $(this).attr('src'));
+           $('#imagemodal').modal('show');
+        });
+});
+</script>
+<!--===========================FlickrAPI modal end================================= -->
+    <!--=====================================================================-->
 <div>
 	<!--another section-->
 	<div class="panel_panel-primary">
