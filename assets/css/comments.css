@@ -18,10 +18,20 @@ button {width: 100%;height: 100%;}
 .panel_panel-primary {background-color: #BF0404;}
 .panel-title {color: white;}
 .footer {color: white;}
-.h1_class {columns: white;}
+.h1_class {columns: white; text-align: center;}
 
 audio {display: none;}
 
 .h1_class {color: white;}
 label {color: #BF0404;}
 
+.homepageTab {text-align: center;}
+
+
+/*moved data up above
+.h1_class { text-align: center; }
+*/
+
+#name {cursor: pointer;}
+#Subject { cursor: pointer;}
+#com {cursor: pointer;}
